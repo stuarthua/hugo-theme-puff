@@ -218,10 +218,18 @@ DefaultContentLanguage = "cn"
 
 [privacy]
   [privacy.googleAnalytics]
-    disable = true # local run disable
+    disable = false
     respectDoNotTrack = false
   [privacy.disqus]
-    disable = true # local run disable
+    disable = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = false
+    simple = false
+  [privacy.x]
+    disable = false
+    enableDNT = false
+    simple = false
 
 [params]
 # favicon = "/images/logo.png"

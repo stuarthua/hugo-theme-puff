@@ -49,8 +49,10 @@
   {{ end }}
   {{ template "_internal/schema.html" . }}
 
-  {{ if and (.Site.Config.Services.GoogleAnalytics.ID) (not .Site.Config.Privacy.GoogleAnalytics.Disable) }}
-    {{ template "_internal/google_analytics.html" . }}
+  {{- if not hugo.IsServer }}
+    {{ if and (.Site.Config.Services.GoogleAnalytics.ID) (not .Site.Config.Privacy.GoogleAnalytics.Disable) }}
+      {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
   {{ end }}
 
   {{ if .Site.Params.extraHead }}

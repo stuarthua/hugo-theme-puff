@@ -62,10 +62,12 @@
           {{ partial "related.html" . }}
           <div style="height: 50px;"></div>
           <!-- Disqus -->
-          {{ if and (.Site.Config.Services.Disqus.Shortname) (not .Site.Config.Privacy.Disqus.Disable) }}
-          <div class="post-comments">
-            {{ template "_internal/disqus.html" . }}
-          </div>
+          {{- if not hugo.IsServer }}
+            {{ if and (.Site.Config.Services.Disqus.Shortname) (not .Site.Config.Privacy.Disqus.Disable) }}
+            <div class="post-comments">
+              {{ template "_internal/disqus.html" . }}
+            </div>
+            {{ end }}
           {{ end }}
           <!-- Custom Ads -->
           {{ if .Site.Params.postAds }}
