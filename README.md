@@ -153,6 +153,17 @@ twitterCards = true
 In a post's front matter, include a keyword `images` with a value of a list of
 URLs of images that will be used for Twitter Cards.
 
+### Google Adsense
+
+Add the following settings for Article Page show ads:
+
+```toml
+[params]
+googleAdsense = true
+googleAdsenseClientId = "ca-pub-xxx"
+googleAdsenseSlotId = "xxx"
+```
+
 ### Lazy Image
 
 Lazy load image:

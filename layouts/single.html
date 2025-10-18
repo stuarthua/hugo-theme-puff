@@ -74,7 +74,9 @@
             <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
           {{ end }}
           <!-- Google Adsnese -->
-          {{ partial "google-adsense.html" . }}
+          {{ if .Site.Params.googleAdsense }}
+            {{ partial "google-adsense.html" . }}
+          {{ end }}
         {{ end }}
         
         {{ partial "footer.html" . }}
