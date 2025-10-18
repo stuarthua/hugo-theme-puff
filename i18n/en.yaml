@@ -1,0 +1,20 @@
+- id: categories
+  translation: "Categories"
+
+- id: about
+  translation: "About"
+
+- id: tags
+  translation: "Tags"
+
+- id: rss
+  translation: "RSS"
+
+- id: languageName
+  translation: "Chinese"
+  
+- id: date_format
+  translation: "Jan 02"
+  
+- id: date_format_full
+  translation: "January 02, 2006"

@@ -1,0 +1,57 @@
+title = "Example Blog"
+baseURL = "https://example.com"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+googleAnalytics = "G-XXXXXXXXXX"
+
+[module]
+  [[module.imports]]
+    path = "github.com/stuarthua/hugo-theme-puff"
+
+[author]
+  homepage = "https://stuarthua.com/"
+  name = "Stuart Hua"
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    weight = 1
+
+  [languages.cn]
+    contentDir = "content/cn"
+    weight = 1
+
+[menu]
+  [[menu.main]]
+    identifier = "categories"
+    url = "/categories/"
+    name = "categories"
+    title = "Categories"
+    weight = 1
+  [[menu.main]]
+    identifier = "tag"
+    url = "/tags/"
+    name = "tags"
+    title = "Tags"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    url = "/about/"
+    name = "about"
+    title = "About"
+    weight = 3
+
+[params]
+disqus = "stuarthua" # disqus account name
+extraHead = ''
+mainSections = ["posts", "categories", "tags"]
+
+[[params.socials]]
+name = "rss"
+link = "/index.xml"
+[[params.socials]]
+name = "About"
+link = "https://stuarthua.com"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/stuarthua"

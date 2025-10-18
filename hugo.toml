@@ -21,5 +21,5 @@ staticPrefix = ""
 extraCSSFiles = []
 
 [params.author]
-homepage = "https://blog.stuarthua.com"
+homepage = "https://stuarthua.com"
 name = "Stuart Hua"

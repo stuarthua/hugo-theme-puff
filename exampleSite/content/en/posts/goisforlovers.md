@@ -1,5 +1,5 @@
 +++
-title = "(Hu)go Template Primer"
+title = "Hugo Template Primer"
 description = ""
 tags = [
     "go",
@@ -12,7 +12,6 @@ date = "2014-04-02"
 categories = [
     "Develop",
 ]
-menu = "main"
 +++
 
 Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
@@ -103,7 +102,7 @@ the /layout/ directory within Hugo.
 
 **Example:**
 
-    {{ template "chrome/header.html" . }}
+    {{ template "chrome/header.html" . }
 
 
 ## Logic
@@ -161,7 +160,7 @@ Go Templates treat the following values as false:
 
 **Example 3: And & Or**
 
-    {{ if and (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
+    {{ if and (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr"))}}
 
 **Example 4: With**
 
@@ -214,7 +213,7 @@ Access the page parameter called "disqus_url" and escape the HTML.
 
 **Example 3 :**
 
-    {{ if or (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
+    {{ if or (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr"))}
     Stuff Here
     {{ end }}
 
@@ -285,7 +284,7 @@ Here is the corresponding code inside of the template:
         <div id="toc" class="well col-md-4 col-sm-6">
         {{ .TableOfContents }}
         </div>
-      {{ end }}
+      {{ end }
 
 
 
@@ -297,7 +296,7 @@ For instance, you might declare:
 
 ```yaml
 params:
-  CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
+ CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
   TwitterUser: "spf13"
   SidebarRecentLimit: 5
 ```
@@ -334,7 +333,7 @@ so, such as in this example:
   <h1>Recent Posts</h1>
   <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
     <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
-  {{end}}</ul>
+ {{end}}</ul>
 </nav>
 ```
 

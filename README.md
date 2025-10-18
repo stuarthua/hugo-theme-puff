@@ -1,41 +1,55 @@
-# YinYang
+# Puff
 
-[YinYang](https://en.wikipedia.org/wiki/Yin_and_yang) is a black-white theme for [Hugo](https://gohugo.io/).
-
-[**Demo**](https://blog.joway.io)
+Puff is a black-white theme for [Hugo](https://gohugo.io/).
 
 ## Feature
 
 - minimalist
 - multi-language support
+- [Google Analytics](https://developers.google.com/analytics) support
 - [disqus](https://disqus.com) support
-- [SEO Optimization](https://github.com/joway/hugo-theme-yinyang/blob/master/layouts/partials/seo.html)
+- [SEO Optimization](https://github.com/stuarthua/hugo-theme-puff/blob/master/layouts/partials/seo.html)
 
 ## Screenshot
 
 ![](./images/screenshot.png)
 
-## Installation
+## Usage
 
-From the root of your site:
+Create new hugo site
 
 ```shell
-git clone git@github.com:joway/hugo-theme-yinyang.git themes/yinyang
+hugo new site my-demo-site
 ```
 
-Change `config.toml`:
+Change `hugo.toml`:
 
 ```toml
-theme = "yinyang"
+[module]
+  [[module.imports]]
+    path = "github.com/stuarthua/hugo-theme-puff"
+```
+
+download hugo theme
+
+```shell
+hugo mod init my-demo-site.local
+hugo mod tidy
+```
+
+run your site
+
+```shell
+hugo server
 ```
 
 ## Configuration
 
 ### Head Title
 
-```
+```toml
 [params]
-headTitle = "Joway Wang"
+headTitle = "Stuart Hua"
 ```
 
 If there is no `headTitle` in params, use `.Site.Author.name`.
@@ -44,22 +58,46 @@ If there is no `headTitle` in params, use `.Site.Author.name`.
 
 Set your main section:
 
-```
+```toml
 [params]
-mainSections = ["posts"]
+mainSections = ["posts", "categories", "tags"]
+```
+
+### Menu
+
+Set your menu:
+
+```toml
+[menu]
+  [[menu.main]]
+    identifier = "categories"
+    url = "/categories/"
+    name = "categories"
+    title = "Categories"
+    weight = 1
+  [[menu.main]]
+    identifier = "tag"
+    url = "/tags/"
+    name = "tags"
+    title = "Tags"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    url = "/about/"
+    name = "about"
+    title = "About"
+    weight = 3
 ```
 
 ### Multi-Language
 
-```
+```toml
 [languages]
   [languages.en]
     contentDir = "content/en"
-    languageName = "English"
     weight = 1
   [languages.cn]
     contentDir = "content/cn"
-    languageName = "Chinese"
     weight = 2
 ```
 
@@ -67,42 +105,50 @@ Then your posts files should be put into `content/en` or `content/cn`.
 
 ### Footer
 
-```
+`name` support i18n
+
+```toml
 [[params.socials]]
-name = "About Me"
-link = "https://joway.io"
+name = "rss"
+link = "/index.xml"
+[[params.socials]]
+name = "About"
+link = "https://stuarthua.com"
 [[params.socials]]
 name = "Github"
-link = "https://github.com/joway"
+link = "https://github.com/stuarthua"
 ```
 
 ### Extra Head
 
-```
+```toml
 [params]
 extraHead = '<script src="xxxx.js"></script>'
 ```
 
 ### Insert content on every post
 
-```
+```toml
 [params]
 postHeaderContent = ""
-postFooterContent = "<br/><br/><p>Subscribe：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/joway'>Joway's Blog</a></p>"
+postFooterContent = "<br/><br/><p>Subscribe：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/xxx'>Your Site</a></p>"
 ```
 
 ### Example
 
-```
-baseURL = "https://blog.joway.io/"
+```toml
+baseURL = "https://stuarthua.com/"
+title = "Stuart Hua's Blog"
 languageCode = "en-us"
-title = "Joway's Blog"
-theme = "yinyang"
 DefaultContentLanguage = "cn"
 
+[module]
+  [[module.imports]]
+    path = "github.com/stuarthua/hugo-theme-puff"
+
 [author]
-  name = "Joway"
-  homepage = "https://joway.io/"
+  name = "Stuart Hua"
+  homepage = "https://stuarthua.com/"
 
 [languages]
   [languages.en]
@@ -116,15 +162,38 @@ DefaultContentLanguage = "cn"
 
 [params]
 mainSections = ["posts"]
-headTitle = "Joway Wang"
-disqus = "joway" # disqus account name
+headTitle = "Stuart Hua"
+disqus = "stuarthua" # disqus account name
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
 [[params.socials]]
 name = "About Me"
-link = "https://joway.io"
+link = "https://stuarthua.com"
 [[params.socials]]
 name = "Github"
-link = "https://github.com/joway"
+link = "https://github.com/stuarthua"
 postHeaderContent = ""
-postFooterContent = "<br/><br/><p>Subscribe to：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/joway'>Joway's Blog</a></p>"
+postFooterContent = ""
+```
+
+## Development
+
+settings use local theme folder
+
+```shell
+cd exampleSite
+
+hugo mod init my-site.local
+hugo mod tidy
+```
+
+edit `go.mod` file: use `replace` command to local folder. add connect:
+
+```go
+replace github.com/stuarthua/hugo-theme-puff => ../
+```
+
+run server
+
+```shell
+hugo server
 ```

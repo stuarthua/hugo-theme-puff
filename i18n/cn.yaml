@@ -1,0 +1,20 @@
+- id: categories
+  translation: "分类"
+
+- id: about
+  translation: "关于"
+
+- id: tags
+  translation: "标签"
+
+- id: rss
+  translation: "订阅"
+
+- id: languageName
+  translation: "English"
+  
+- id: date_format
+  translation: "01月02日"
+  
+- id: date_format_full
+  translation: "2006年01月02日"
