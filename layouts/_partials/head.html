@@ -43,7 +43,12 @@
   <link rel="stylesheet" href="{{ $style.Permalink }}">
   <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
-  <!-- Google Analytics -->
+  {{ template "_internal/opengraph.html" . }}
+  {{ if .Site.Params.TwitterCards }}
+    {{ template "_internal/twitter_cards.html" . }}
+  {{ end }}
+  {{ template "_internal/schema.html" . }}
+
   {{ if and (.Site.Config.Services.GoogleAnalytics.ID) (not .Site.Config.Privacy.GoogleAnalytics.Disable) }}
     {{ template "_internal/google_analytics.html" . }}
   {{ end }}

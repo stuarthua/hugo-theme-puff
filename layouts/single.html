@@ -32,7 +32,9 @@
         </header>
 
         <div class="post-content markdown-body">
-          {{ .Site.Params.postHeaderContent | safeHTML }}
+          {{ if .Site.Params.postHeaderContent }}
+            {{ .Site.Params.postHeaderContent | safeHTML }}
+          {{ end }}
           {{ .Content }}
         </div>
 
@@ -47,11 +49,14 @@
             {{ end }}
           </div>
         </div>
+
+        {{ if .Site.Params.postFooterContent }}
         <div class="row">
           <div class="col-xs-12">
             {{ .Site.Params.postFooterContent | safeHTML }}
           </div>
         </div>
+        {{ end }}
 
         {{ if in .Site.Params.mainSections .Type }}
           {{ partial "related.html" . }}

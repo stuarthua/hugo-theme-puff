@@ -42,9 +42,9 @@ DefaultContentLanguage = "en"
 
 [services]
   [services.googleAnalytics]
-    id = 'G-S1PDL8VX4B' # google analytics code
+    id = 'G-xxxxxx' # google analytics code
   [services.disqus]
-    shortname = 'stuarthua' # disqus account name
+    shortname = 'your disqus name' # disqus account name
 
 [privacy]
   [privacy.googleAnalytics]
@@ -55,11 +55,13 @@ DefaultContentLanguage = "en"
 
 [params]
 mainSections = ["posts", "categories", "tags"]
-headTitle = "Stuart Hua"
 extraHead = ''
 extraBody = ''
 postHeaderContent = ""
 postFooterContent = ""
+lazyImage = true
+twitterCards = true
+
 [[params.socials]]
 name = "rss"
 link = "/index.xml"

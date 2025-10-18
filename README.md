@@ -8,11 +8,10 @@ Puff is a black-white theme for [Hugo](https://gohugo.io/).
 - multi-language support
 - [Google Analytics](https://developers.google.com/analytics) support
 - [disqus](https://disqus.com) support
-- [SEO Optimization](https://github.com/stuarthua/hugo-theme-puff/blob/master/layouts/partials/seo.html)
 
 ## Screenshot
 
-![](./images/screenshot.png)
+![screenshot](./images/screenshot.png)
 
 ## Usage
 
@@ -44,15 +43,6 @@ hugo server
 ```
 
 ## Configuration
-
-### Head Title
-
-```toml
-[params]
-headTitle = "Stuart Hua"
-```
-
-If there is no `headTitle` in params, use `.Site.Author.name`.
 
 ### Main section
 
@@ -105,7 +95,7 @@ Then your posts files should be put into `content/en` or `content/cn`.
 
 ### Footer
 
-`name` support i18n
+Tips: `name` support i18n
 
 ```toml
 [[params.socials]]
@@ -123,7 +113,28 @@ link = "https://github.com/stuarthua"
 
 ```toml
 [params]
-extraHeader = '<script src="xxxx.js"></script>'
+extraHead = '<script src="xxxx.js"></script>'
+```
+
+### Twitter Cards
+
+Add the following setting:
+
+```toml
+[params]
+twitterCards = true
+```
+
+In a post's front matter, include a keyword `images` with a value of a list of
+URLs of images that will be used for Twitter Cards.
+
+### Lazy Image
+
+Lazy load image:
+
+```toml
+[params]
+lazyImage = true
 ```
 
 ### Insert content on every post
