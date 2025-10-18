@@ -1,11 +1,7 @@
-title = "Example Blog"
-baseURL = "https://example.com"
+baseURL = "https://stuarthua.com/"
+title = "Stuart Hua's Blog"
 languageCode = "en-us"
-DefaultContentLanguage = "en"
-
-[author]
-  homepage = "https://stuarthua.com/"
-  name = "Stuart Hua"
+DefaultContentLanguage = "cn"
 
 [module]
   [[module.imports]]
@@ -64,6 +60,9 @@ postHeaderContent = ''
 postFooterContent = ''
 lazyImage = true
 twitterCards = true
+  [params.author]
+    name = "stuarthua"
+    homepage = "https://stuarthua.com/"
   [[params.socials]]
     name = "rss"
     link = "/index.xml"

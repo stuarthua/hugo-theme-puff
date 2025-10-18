@@ -176,10 +176,6 @@ title = "Stuart Hua's Blog"
 languageCode = "en-us"
 DefaultContentLanguage = "cn"
 
-[author]
-  name = "Stuart Hua"
-  homepage = "https://stuarthua.com/"
-
 [module]
   [[module.imports]]
     path = "github.com/stuarthua/hugo-theme-puff"
@@ -222,27 +218,29 @@ DefaultContentLanguage = "cn"
 
 [privacy]
   [privacy.googleAnalytics]
-    disable = true
+    disable = true # local run disable
     respectDoNotTrack = false
   [privacy.disqus]
-    disable = true
+    disable = true # local run disable
 
 [params]
 # favicon = "/images/logo.png"
 description = 'Example Website Description'
 mainSections = ["posts", "categories", "tags"]
-headTitle = "Stuart Hua"
 extraHead = ''
 extraBody = ''
 postHeaderContent = ''
 postFooterContent = ''
 lazyImage = true
 twitterCards = true
+  [params.author]
+    name = "stuarthua"
+    homepage = "https://stuarthua.com/"
   [[params.socials]]
     name = "rss"
     link = "/index.xml"
   [[params.socials]]
-   name = "Stuart Hua"
+   name = "About"
    link = "https://stuarthua.com"
   [[params.socials]]
    name = "Github"
