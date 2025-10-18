@@ -63,10 +63,12 @@ title: "My Gallery"
 date: 2023-01-01
 draft: false
 gallery:
-  - url: "/images/image1.jpg"
-    name: "Image 1 Description"
-  - url: "/images/image2.jpg"
-    name: "Image 2 Description"
+  - name: "Image 1 Description"
+    url: "https://www.stuarthua.com"
+    img: "/images/image1.jpg"
+  - name: "Image 2 Description"
+    url: "https://www.stuarthua.com"
+    img: "/images/image2.jpg"
 ---
 ```
 
