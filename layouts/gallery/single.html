@@ -13,13 +13,15 @@
           <h1 class="post-title">{{ .Title }}</h1>
         </header>
 
-        <div class="post-content page-content markdown-body">
+        <div class="post-content page-content">
           <div class="row gallery">
             {{ range .Params.gallery }}
             <div class="col-xs-6 col-sm-4 col-md-3 gallery-img">
               <div class="gallery-img-wrapper">
-                <img src="{{ .url }}" alt="{{ .name }}" class="gallery-image">
-                <span class="gallery-img-desc">{{ .name }}</span>
+                <a href="{{ .url }}" target="_blank">
+                  <img src="{{ .url }}" alt="{{ .name }}" class="gallery-image">
+                  <span class="gallery-img-desc">{{ .name }}</span>
+                </a>
               </div>
             </div>
             {{ end }}

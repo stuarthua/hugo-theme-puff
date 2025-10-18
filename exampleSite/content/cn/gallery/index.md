@@ -1,5 +1,5 @@
 ---
-title: "我的作品集"
+title: ""
 date: 2023-01-01
 draft: false
 gallery:

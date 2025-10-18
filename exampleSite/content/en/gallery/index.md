@@ -1,5 +1,5 @@
 ---
-title: "My Projects"
+title: ""
 date: 2023-01-01
 draft: false
 gallery:

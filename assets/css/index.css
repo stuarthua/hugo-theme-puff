@@ -275,6 +275,15 @@ a:hover {
 
 /* gallery */
 
+.post-content .gallery .gallery-img-wrapper a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.post-content .gallery .gallery-img-wrapper a:hover {
+  text-decoration: none;
+}
+
 .gallery-img {
   text-align: center;
   margin-bottom: 20px;
