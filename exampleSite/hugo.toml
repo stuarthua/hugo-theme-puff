@@ -15,7 +15,6 @@ DefaultContentLanguage = "en"
   [languages.en]
     contentDir = "content/en"
     weight = 1
-
   [languages.cn]
     contentDir = "content/cn"
     weight = 1
@@ -46,7 +45,7 @@ DefaultContentLanguage = "en"
   [services.googleAnalytics]
     id = 'G-xxxxxx' # google analytics code
   [services.disqus]
-    shortname = 'your disqus name' # disqus account name
+    shortname = 'your_disqus_name' # disqus account name
 
 [privacy]
   [privacy.googleAnalytics]
@@ -56,20 +55,21 @@ DefaultContentLanguage = "en"
     disable = true # local run disable
 
 [params]
+# favicon = "/images/logo.png"
+description = 'Example Website Description'
 mainSections = ["posts", "categories", "tags"]
 extraHead = ''
 extraBody = ''
-postHeaderContent = ""
-postFooterContent = ""
+postHeaderContent = ''
+postFooterContent = ''
 lazyImage = true
 twitterCards = true
-
-[[params.socials]]
-name = "rss"
-link = "/index.xml"
-[[params.socials]]
-name = "About"
-link = "https://stuarthua.com"
-[[params.socials]]
-name = "Github"
-link = "https://github.com/stuarthua"
+  [[params.socials]]
+    name = "rss"
+    link = "/index.xml"
+  [[params.socials]]
+   name = "About"
+   link = "https://stuarthua.com"
+  [[params.socials]]
+   name = "Github"
+   link = "https://github.com/stuarthua"

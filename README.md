@@ -176,29 +176,49 @@ title = "Stuart Hua's Blog"
 languageCode = "en-us"
 DefaultContentLanguage = "cn"
 
-[module]
-  [[module.imports]]
-    path = "github.com/stuarthua/hugo-theme-puff"
-
 [author]
   name = "Stuart Hua"
   homepage = "https://stuarthua.com/"
 
+[module]
+  [[module.imports]]
+    path = "github.com/stuarthua/hugo-theme-puff"
+
 [languages]
   [languages.en]
     contentDir = "content/en"
-    languageName = "English"
     weight = 1
   [languages.cn]
     contentDir = "content/cn"
-    languageName = "Chinese"
-    weight = 2
+    weight = 1
+
+[menu]
+  [[menu.main]]
+    identifier = "gallery"
+    url = "/gallery/"
+    name = "gallery"
+    weight = 1
+  [[menu.main]]
+    identifier = "categories"
+    url = "/categories/"
+    name = "categories"
+    weight = 10
+  [[menu.main]]
+    identifier = "tag"
+    url = "/tags/"
+    name = "tags"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    url = "/about/"
+    name = "about"
+    weight = 30
 
 [services]
   [services.googleAnalytics]
     id = 'G-xxxxxx' # google analytics code
   [services.disqus]
-    shortname = 'your disqus name' # disqus account name
+    shortname = 'your_disqus_name' # disqus account name
 
 [privacy]
   [privacy.googleAnalytics]
@@ -208,18 +228,25 @@ DefaultContentLanguage = "cn"
     disable = true
 
 [params]
+# favicon = "/images/logo.png"
+description = 'Example Website Description'
 mainSections = ["posts", "categories", "tags"]
 headTitle = "Stuart Hua"
 extraHead = ''
 extraBody = ''
-postHeaderContent = ""
-postFooterContent = ""
-[[params.socials]]
-name = "About Me"
-link = "https://stuarthua.com"
-[[params.socials]]
-name = "Github"
-link = "https://github.com/stuarthua"
+postHeaderContent = ''
+postFooterContent = ''
+lazyImage = true
+twitterCards = true
+  [[params.socials]]
+    name = "rss"
+    link = "/index.xml"
+  [[params.socials]]
+   name = "Stuart Hua"
+   link = "https://stuarthua.com"
+  [[params.socials]]
+   name = "Github"
+   link = "https://github.com/stuarthua"
 ```
 
 ## Development
