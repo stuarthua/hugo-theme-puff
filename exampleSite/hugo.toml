@@ -70,7 +70,8 @@ lazyImage = true
 twitterCards = true
 googleAdsense = true
 googleAdsenseClientId = "ca-pub-xxx"
-googleAdsenseSlotId = "xxx"
+googleAdsenseBannerSlotId = "xxx"
+googleAdsenseArticleSlotId = "xxx"
   [params.author]
     name = "stuarthua"
     homepage = "https://stuarthua.com/"
