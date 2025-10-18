@@ -31,6 +31,13 @@
           {{ end }}
         </div>
 
+        <!-- Google Adsnese for ariticle -->
+        {{- if not hugo.IsServer }}
+          {{ if .Site.Params.googleAdsense }}
+            {{ partial "google-adsense-banner.html" . }}
+          {{ end }}
+        {{ end }}
+
         {{ partial "footer.html" . }}
       </div>
     </div>

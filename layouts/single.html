@@ -73,7 +73,10 @@
           {{ if .Site.Params.postAds }}
             <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
           {{ end }}
-          <!-- Google Adsnese for ariticle -->
+        {{ end }}
+
+        <!-- Google Adsnese for ariticle -->
+        {{- if not hugo.IsServer }}
           {{ if .Site.Params.googleAdsense }}
             {{ partial "google-adsense-article.html" . }}
           {{ end }}
