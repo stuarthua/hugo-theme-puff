@@ -20,13 +20,13 @@
               </time>
               {{ end }}
             </div>
-            <!-- <div class="col-xs-6">
+            <div class="col-xs-6">
               {{ if .Site.Params.Author.name }}
               <div class="post-author">
-                <a target="_blank" href="{{ .Site.Params.Author.homepage }}">@{{ .Site.Params.Author.name }}</a>
+                <a target="_blank" href="{{ .Site.Params.Author.homepage }}">{{ .Site.Params.Author.name }}</a>
               </div>
               {{ end }}
-            </div> -->
+            </div>
           </div>
           {{ end }}
         </header>
@@ -56,15 +56,17 @@
         {{ if in .Site.Params.mainSections .Type }}
           {{ partial "related.html" . }}
           <div style="height: 50px;"></div>
-          {{ if .Site.Params.disqus }}
-            <div class="post-comments">
-              {{ partial "disqus.html" . }}
-            </div>
+          <!-- Disqus -->
+          {{ if and (.Site.Config.Services.Disqus.Shortname) (not .Site.Config.Privacy.Disqus.Disable) }}
+          <div class="post-comments">
+            {{ template "_internal/disqus.html" . }}
+          </div>
           {{ end }}
+          <!-- Custom Ads -->
           {{ if .Site.Params.postAds }}
             <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
           {{ end }}
-          <!-- google adsnese -->
+          <!-- Google Adsnese -->
           {{ partial "google-adsense.html" . }}
         {{ end }}
         

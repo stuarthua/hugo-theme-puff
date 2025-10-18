@@ -2,15 +2,14 @@ title = "Example Blog"
 baseURL = "https://example.com"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-googleAnalytics = "G-XXXXXXXXXX"
-
-[module]
-  [[module.imports]]
-    path = "github.com/stuarthua/hugo-theme-puff"
 
 [author]
   homepage = "https://stuarthua.com/"
   name = "Stuart Hua"
+
+[module]
+  [[module.imports]]
+    path = "github.com/stuarthua/hugo-theme-puff"
 
 [languages]
   [languages.en]
@@ -41,11 +40,26 @@ googleAnalytics = "G-XXXXXXXXXX"
     title = "About"
     weight = 3
 
-[params]
-disqus = "stuarthua" # disqus account name
-extraHead = ''
-mainSections = ["posts", "categories", "tags"]
+[services]
+  [services.googleAnalytics]
+    id = 'G-S1PDL8VX4B' # google analytics code
+  [services.disqus]
+    shortname = 'stuarthua' # disqus account name
 
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true # local run disable
+    respectDoNotTrack = false
+  [privacy.disqus]
+    disable = true # local run disable
+
+[params]
+mainSections = ["posts", "categories", "tags"]
+headTitle = "Stuart Hua"
+extraHead = ''
+extraBody = ''
+postHeaderContent = ""
+postFooterContent = ""
 [[params.socials]]
 name = "rss"
 link = "/index.xml"

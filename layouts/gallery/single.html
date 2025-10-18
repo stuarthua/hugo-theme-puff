@@ -24,10 +24,10 @@
           </div>
         </div>
 
-        {{ if .Site.Params.disqus }}
-        <div class="post-comments">
-          {{ partial "disqus.html" . }}
-        </div>
+        {{ if and (.Site.Config.Services.Disqus.Shortname) (not .Site.Config.Privacy.Disqus.Disable) }}
+          <div class="post-comments">
+            {{ template "_internal/disqus.html" . }}
+          </div>
         {{ end }}
 
         {{ partial "footer.html" . }}
@@ -36,6 +36,7 @@
   </article>
 
   {{ partial "scripts.html" . }}
+  
   {{ if .Site.Params.extraBody }}
     {{ .Site.Params.extraBody | safeHTML }}
   {{ end }}

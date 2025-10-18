@@ -41,20 +41,14 @@
   {{- end }}
   {{ $style := resources.Get "css/index.css" | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
-  <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml"
-    title="{{ .Site.Title }}">
-  
-  <!-- fonts -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet"> -->
-  
-  <!-- quicklink require -->
-  <!-- <script>
-    /* Disable minification (remove `.min` from URL path) for more info 
-    https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver
-    */
-    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script> -->
+  <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
   <!-- Google Analytics -->
-  {{ template "_internal/google_analytics.html" . }}
+  {{ if and (.Site.Config.Services.GoogleAnalytics.ID) (not .Site.Config.Privacy.GoogleAnalytics.Disable) }}
+    {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
+
+  {{ if .Site.Params.extraHead }}
+    {{ .Site.Params.extraHead | safeHTML }}
+  {{ end }}
 </head>

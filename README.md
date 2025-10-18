@@ -123,7 +123,7 @@ link = "https://github.com/stuarthua"
 
 ```toml
 [params]
-extraHead = '<script src="xxxx.js"></script>'
+extraHeader = '<script src="xxxx.js"></script>'
 ```
 
 ### Insert content on every post
@@ -160,19 +160,32 @@ DefaultContentLanguage = "cn"
     languageName = "Chinese"
     weight = 2
 
+[services]
+  [services.googleAnalytics]
+    id = 'G-xxxxxx' # google analytics code
+  [services.disqus]
+    shortname = 'your disqus name' # disqus account name
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true
+    respectDoNotTrack = false
+  [privacy.disqus]
+    disable = true
+
 [params]
-mainSections = ["posts"]
+mainSections = ["posts", "categories", "tags"]
 headTitle = "Stuart Hua"
-disqus = "stuarthua" # disqus account name
-extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
+extraHead = ''
+extraBody = ''
+postHeaderContent = ""
+postFooterContent = ""
 [[params.socials]]
 name = "About Me"
 link = "https://stuarthua.com"
 [[params.socials]]
 name = "Github"
 link = "https://github.com/stuarthua"
-postHeaderContent = ""
-postFooterContent = ""
 ```
 
 ## Development
