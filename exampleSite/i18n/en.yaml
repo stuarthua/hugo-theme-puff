@@ -3,3 +3,6 @@
 
 - id: About
   translation: "About Me"
+
+- id: gallery
+  translation: "Gallery"

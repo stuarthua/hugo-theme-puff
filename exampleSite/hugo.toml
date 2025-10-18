@@ -22,23 +22,25 @@ DefaultContentLanguage = "en"
 
 [menu]
   [[menu.main]]
+    identifier = "gallery"
+    url = "/gallery/"
+    name = "gallery"
+    weight = 1
+  [[menu.main]]
     identifier = "categories"
     url = "/categories/"
     name = "categories"
-    title = "Categories"
-    weight = 1
+    weight = 10
   [[menu.main]]
     identifier = "tag"
     url = "/tags/"
     name = "tags"
-    title = "Tags"
-    weight = 2
+    weight = 20
   [[menu.main]]
     identifier = "about"
     url = "/about/"
     name = "about"
-    title = "About"
-    weight = 3
+    weight = 30
 
 [services]
   [services.googleAnalytics]

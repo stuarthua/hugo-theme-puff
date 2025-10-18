@@ -16,19 +16,15 @@
         <div class="post-content page-content markdown-body">
           <div class="row gallery">
             {{ range .Params.gallery }}
-            <div class="col-xs-6 gallery-img">
-              <img src="{{ .url }}" alt="{{ .name }}">
-              <span class="gallery-img-desc">{{ .name }}</span>
+            <div class="col-xs-6 col-sm-4 col-md-3 gallery-img">
+              <div class="gallery-img-wrapper">
+                <img src="{{ .url }}" alt="{{ .name }}" class="gallery-image">
+                <span class="gallery-img-desc">{{ .name }}</span>
+              </div>
             </div>
             {{ end }}
           </div>
         </div>
-
-        {{ if and (.Site.Config.Services.Disqus.Shortname) (not .Site.Config.Privacy.Disqus.Disable) }}
-          <div class="post-comments">
-            {{ template "_internal/disqus.html" . }}
-          </div>
-        {{ end }}
 
         {{ partial "footer.html" . }}
       </div>

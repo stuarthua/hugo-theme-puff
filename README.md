@@ -53,6 +53,23 @@ Set your main section:
 mainSections = ["posts", "categories", "tags"]
 ```
 
+### Gallery
+
+You can create a gallery page by creating a content file in the `content/gallery/` directory with a `gallery` array in the front matter. Each item in the array should have a `url` field for the image location and a `name` field for the image description:
+
+```yaml
+---
+title: "My Gallery"
+date: 2023-01-01
+draft: false
+gallery:
+  - url: "/images/image1.jpg"
+    name: "Image 1 Description"
+  - url: "/images/image2.jpg"
+    name: "Image 2 Description"
+---
+```
+
 ### Menu
 
 Set your menu:
@@ -60,23 +77,29 @@ Set your menu:
 ```toml
 [menu]
   [[menu.main]]
+    identifier = "gallery"
+    url = "/gallery/"
+    name = "gallery"
+    title = "Gallery"
+    weight = 1
+  [[menu.main]]
     identifier = "categories"
     url = "/categories/"
     name = "categories"
     title = "Categories"
-    weight = 1
+    weight = 10
   [[menu.main]]
     identifier = "tag"
     url = "/tags/"
     name = "tags"
     title = "Tags"
-    weight = 2
+    weight = 20
   [[menu.main]]
     identifier = "about"
     url = "/about/"
     name = "about"
     title = "About"
-    weight = 3
+    weight = 30
 ```
 
 ### Multi-Language

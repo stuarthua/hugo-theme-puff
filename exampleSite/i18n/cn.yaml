@@ -3,3 +3,6 @@
 
 - id: About
   translation: "关于我"
+
+- id: gallery
+  translation: "作品集"
