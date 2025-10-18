@@ -1,12 +1,13 @@
 baseURL = "https://example.com"
 languageCode = "en-us"
-title = "Example YinYong Blog"
-theme = "yinyang"
+title = "Example Puff Blog"
+theme = "puff"
 DefaultContentLanguage = "en"
+googleAnalytics = "G-XXXXXXXXXX"
 
 [author]
-  name = "Joway Wang"
-  homepage = "https://joway.io/"
+  homepage = "https://blog.stuarthua.com/"
+  name = "Stuart Hua"
 
 [languages]
   [languages.en]
@@ -19,7 +20,7 @@ DefaultContentLanguage = "en"
     weight = 1
 
 [params]
-disqus = "joway" # disqus account name
+disqus = "stuarthua" # disqus account name
 extraHead = ''
 mainSections = ["posts"]
 
@@ -29,4 +30,4 @@ link = "/index.xml"
 
 [[params.socials]]
 name = "About"
-link = "https://joway.io"
+link = "https://stuarthua.com"

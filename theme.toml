@@ -1,8 +1,10 @@
-name = "Yinyang"
+name = "Puff"
+description = "Puff theme for Hugo."
+features = ["blog"]
+homepage = "https://github.com/stuarthua/hugo-theme-puff"
 license = "MIT"
-licenselink = "https://github.com/joway/hugo-theme-yinyang/blob/master/LICENSE"
-description = "Yinyang theme for Hugo."
-homepage = "https://github.com/joway/hugo-theme-yinyang"
+licenselink = "https://github.com/stuarthua/hugo-theme-puff/blob/main/LICENSE"
+min_version = "0.50"
 tags = [
   "blog",
   "minimal",
@@ -10,14 +12,14 @@ tags = [
   "responsive",
   "simple",
   "clean",
-  "personal"
+  "personal",
 ]
-features = ["blog"]
-min_version = "0.50"
 
 [params]
 staticPrefix = ""
+# extraCSSFiles = ["css/foo.css", "css/bar.css"]
+extraCSSFiles = []
 
-[author]
-  name = "Joway Wang"
-  homepage = "https://joway.io"
+[params.author]
+homepage = "https://blog.stuarthua.com"
+name = "Stuart Hua"
